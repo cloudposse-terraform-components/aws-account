@@ -2,8 +2,46 @@ name: "aws-account"
 # Canonical GitHub repo
 github_repo: "cloudposse-terraform-components/aws-account"
 # Short description of this project
-description: |2-
-   |
+description: |-
+  ---
+  tags:
+    - component/account
+    - layer/accounts
+    - provider/aws
+    - privileged
+  ---
+
+
+
+  This component is responsible for provisioning the full account hierarchy along with Organizational Units (OUs). It
+  includes the ability to associate Service Control Policies (SCPs) to the Organization, each Organizational Unit and
+  account.
+
+  > [!NOTE]
+  >
+  > Part of a [cold start](https://docs.cloudposse.com/layers/accounts/prepare-aws-organization/) so it has to be
+  > initially run with `SuperAdmin` role.
+
+  In addition, it enables
+  [AWS IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html), which helps
+  you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, that are shared
+  with an external entity. This lets you identify unintended access to your resources and data, which is a security risk.
+  Access Analyzer identifies resources that are shared with external principals by using logic-based reasoning to analyze
+  the resource-based policies in your AWS environment. For each instance of a resource that is shared outside of your
+  account, Access Analyzer generates a finding. Findings include information about the access and the external principal
+  that it is granted to. You can review findings to determine whether the access is intended and safe, or the access is
+  unintended and a security risk.
+
+  ## Usage
+
+  **Stack Level**: Global
+
+  **IMPORTANT**: Account Name building blocks (such as tenant, stage, environment) must not contain dashes. Doing so will
+  lead to unpredictable resource names as a `-` is the default delimiter. Additionally, account names must be lower case
+  alphanumeric with no special characters. For example:
+
+  | Key              | Value           | Correctness |
+  | ---------------- | --------------- | ----------- |
   | **Tenant**       | foo             | ✅          |
   | **Tenant**       | foo-bar         | ❌          |
   | **Environment**  | use1            | ✅          |
