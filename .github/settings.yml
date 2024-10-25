@@ -1,11 +1,7 @@
 # Upstream changes from _extends are only recognized when modifications are made to this file in the default branch.
 _extends: .github
 repository:
-  name: template
-  description: Template for Terraform Components
+  name: aws-account
+  description: ' | | **Tenant**       | foo             | ✅          | | **Tenant**       | foo-bar         | ❌          | | **Environment**  | use1            | ✅          | | **Environment**  | us-east-1       | ❌          | | **Account Name** | `core-identity` | ✅          |  Here is an example snippet for how to use this component'
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component
-
-
-
-
