@@ -2,6 +2,6 @@
 _extends: .github
 repository:
   name: aws-account
-  description: '--- tags:   - component/account   - layer/accounts   - provider/aws   - privileged ---    This component is responsible for provisioning the full account hierarchy along with Organizational Units (OUs)'
+  description: 'This component is responsible for provisioning the full account hierarchy along with Organizational Units (OUs)'
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component
