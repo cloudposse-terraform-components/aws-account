@@ -113,3 +113,8 @@ output "organizational_unit_names_organizational_unit_scp_arns" {
   value       = local.organizational_unit_names_organizational_unit_scp_arns
   description = "Map of OU names to SCP ARNs"
 }
+
+output "account_name_id_map" {
+  value       = { for k, v in local.account_info_map : k => v.id }
+  description = "Map of account names to account IDs (including root account)"
+}
