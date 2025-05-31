@@ -413,9 +413,9 @@ atmos terraform apply account --stack gbl-root
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_accounts_service_control_policies"></a> [accounts\_service\_control\_policies](#module\_accounts\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.9.2 |
-| <a name="module_organization_service_control_policies"></a> [organization\_service\_control\_policies](#module\_organization\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.9.2 |
-| <a name="module_organizational_units_service_control_policies"></a> [organizational\_units\_service\_control\_policies](#module\_organizational\_units\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.9.2 |
+| <a name="module_accounts_service_control_policies"></a> [accounts\_service\_control\_policies](#module\_accounts\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.15.1 |
+| <a name="module_organization_service_control_policies"></a> [organization\_service\_control\_policies](#module\_organization\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.15.1 |
+| <a name="module_organizational_units_service_control_policies"></a> [organizational\_units\_service\_control\_policies](#module\_organizational\_units\_service\_control\_policies) | cloudposse/service-control-policies/aws | 0.15.1 |
 | <a name="module_service_control_policy_statements_yaml_config"></a> [service\_control\_policy\_statements\_yaml\_config](#module\_service\_control\_policy\_statements\_yaml\_config) | cloudposse/config/yaml | 1.0.2 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
@@ -468,6 +468,7 @@ atmos terraform apply account --stack gbl-root
 | <a name="output_account_arns"></a> [account\_arns](#output\_account\_arns) | List of account ARNs (excluding root account) |
 | <a name="output_account_ids"></a> [account\_ids](#output\_account\_ids) | List of account IDs (excluding root account) |
 | <a name="output_account_info_map"></a> [account\_info\_map](#output\_account\_info\_map) | Map of account names to<br/>  eks: boolean, account hosts at least one EKS cluster<br/>  id: account id (number)<br/>  stage: (optional) the account "stage"<br/>  tenant: (optional) the account "tenant" |
+| <a name="output_account_name_id_map"></a> [account\_name\_id\_map](#output\_account\_name\_id\_map) | Map of account names to account IDs (including root account) |
 | <a name="output_account_names_account_arns"></a> [account\_names\_account\_arns](#output\_account\_names\_account\_arns) | Map of account names to account ARNs (excluding root account) |
 | <a name="output_account_names_account_ids"></a> [account\_names\_account\_ids](#output\_account\_names\_account\_ids) | Map of account names to account IDs (excluding root account) |
 | <a name="output_account_names_account_scp_arns"></a> [account\_names\_account\_scp\_arns](#output\_account\_names\_account\_scp\_arns) | Map of account names to SCP ARNs for accounts with SCPs |
