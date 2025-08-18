@@ -386,8 +386,6 @@ usage: |-
   ```
   atmos terraform apply account --stack gbl-root
   ```
-# Placeholder for Terraform Docs tables
-terraform_docs: {}
 
 references:
   - name: "cloudposse/terraform-aws-components"
