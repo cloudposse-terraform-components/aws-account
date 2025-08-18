@@ -493,9 +493,9 @@ atmos terraform apply account --stack gbl-root
 
 ## References
 
-For additional context, refer to some of these links.
 
 - [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account) - Cloud Posse's upstream component
+
 
 
 
