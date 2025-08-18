@@ -393,8 +393,7 @@ references:
   - name: "cloudposse/terraform-aws-components"
     description: "Cloud Posse's upstream component"
     url: "https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account"
-links: []
-text: []
+
 categories:
   - component/account
   - layer/accounts
@@ -405,7 +404,7 @@ tags:
   - layer/accounts
   - provider/aws
   - privileged
-pages: []
+
 # License of this project
 license: "APACHE2"
 # Badges to display
