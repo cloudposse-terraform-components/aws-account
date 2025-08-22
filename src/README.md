@@ -270,7 +270,7 @@ To enable resource sharing with AWS Organization via AWS Management Console
 To enable resource sharing with AWS Organization via AWS CLI
 
 ```
- √ . [xamp-SuperAdmin] (HOST) infra ⨠ aws ram enable-sharing-with-aws-organization
+√ . [xamp-SuperAdmin] (HOST) infra ⨠ aws ram enable-sharing-with-aws-organization
 {
     "returnValue": true
 }
@@ -395,7 +395,15 @@ atmos terraform apply account --stack gbl-root
 ```
 
 <!-- prettier-ignore-start -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- prettier-ignore-end -->
+
+## References
+
+- [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account) -
+  Cloud Posse's upstream component
+
+
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -488,12 +496,10 @@ atmos terraform apply account --stack gbl-root
 | <a name="output_organizational_unit_names_organizational_unit_ids"></a> [organizational\_unit\_names\_organizational\_unit\_ids](#output\_organizational\_unit\_names\_organizational\_unit\_ids) | Map of Organizational Unit names to Organizational Unit IDs |
 | <a name="output_organizational_unit_names_organizational_unit_scp_arns"></a> [organizational\_unit\_names\_organizational\_unit\_scp\_arns](#output\_organizational\_unit\_names\_organizational\_unit\_scp\_arns) | Map of OU names to SCP ARNs |
 | <a name="output_organizational_unit_names_organizational_unit_scp_ids"></a> [organizational\_unit\_names\_organizational\_unit\_scp\_ids](#output\_organizational\_unit\_names\_organizational\_unit\_scp\_ids) | Map of OU names to SCP IDs |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- prettier-ignore-end -->
+<!-- markdownlint-restore -->
 
-## References
 
-- [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account) -
-  Cloud Posse's upstream component
+
 
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-account&utm_content=)
+
