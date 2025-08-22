@@ -26,7 +26,6 @@ the resource-based policies in your AWS environment. For each instance of a reso
 account, Access Analyzer generates a finding. Findings include information about the access and the external principal
 that it is granted to. You can review findings to determine whether the access is intended and safe, or the access is
 unintended and a security risk.
-
 ## Usage
 
 **Stack Level**: Global
@@ -397,11 +396,6 @@ atmos terraform apply account --stack gbl-root
 <!-- prettier-ignore-start -->
 <!-- prettier-ignore-end -->
 
-## References
-
-- [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account) -
-  Cloud Posse's upstream component
-
 
 <!-- markdownlint-disable -->
 ## Requirements
@@ -497,6 +491,13 @@ atmos terraform apply account --stack gbl-root
 | <a name="output_organizational_unit_names_organizational_unit_scp_arns"></a> [organizational\_unit\_names\_organizational\_unit\_scp\_arns](#output\_organizational\_unit\_names\_organizational\_unit\_scp\_arns) | Map of OU names to SCP ARNs |
 | <a name="output_organizational_unit_names_organizational_unit_scp_ids"></a> [organizational\_unit\_names\_organizational\_unit\_scp\_ids](#output\_organizational\_unit\_names\_organizational\_unit\_scp\_ids) | Map of OU names to SCP IDs |
 <!-- markdownlint-restore -->
+
+
+
+## References
+
+
+- [cloudposse-terraform-components](https://github.com/orgs/cloudposse-terraform-components/repositories) - Cloud Posse's upstream component
 
 
 
