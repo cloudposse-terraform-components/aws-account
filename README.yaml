@@ -22,8 +22,7 @@ description: |-
   that it is granted to. You can review findings to determine whether the access is intended and safe, or the access is
   unintended and a security risk.
 
-  ## Usage
-
+usage: |-
   **Stack Level**: Global
 
   **IMPORTANT**: Account Name building blocks (such as tenant, stage, environment) must not contain dashes. Doing so will
@@ -392,10 +391,10 @@ description: |-
   <!-- prettier-ignore-start -->
   <!-- prettier-ignore-end -->
 
-  ## References
-
-  - [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/account) -
-    Cloud Posse's upstream component
+references:
+  - name: cloudposse-terraform-components
+    url: https://github.com/orgs/cloudposse-terraform-components/repositories
+    description: Cloud Posse's upstream component
 tags:
   - component/account
   - layer/accounts
