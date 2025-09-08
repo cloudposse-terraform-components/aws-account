@@ -256,22 +256,22 @@ locals {
   )
 
   # Map of account names to SCP IDs
-  account_names_account_scp_ids = service_control_policies_enabled ? {
+  account_names_account_scp_ids = var.service_control_policies_enabled ? {
     for k, v in local.account_names_service_control_policy_statements_map : k => module.accounts_service_control_policies[k].organizations_policy_id
   } : {}
 
   # Map of account names to SCP ARNs
-  account_names_account_scp_arns = service_control_policies_enabled ? {
+  account_names_account_scp_arns = var.service_control_policies_enabled ? {
     for k, v in local.account_names_service_control_policy_statements_map : k => module.accounts_service_control_policies[k].organizations_policy_arn
   } : {}
 
   # Map of OU names to SCP IDs
-  organizational_unit_names_organizational_unit_scp_ids = service_control_policies_enabled ? {
+  organizational_unit_names_organizational_unit_scp_ids = var.service_control_policies_enabled ? {
     for k, v in local.organizational_unit_names_service_control_policy_statements_map : k => module.organizational_units_service_control_policies[k].organizations_policy_id
   } : {}
 
   # Map of OU names to SCP ARNs
-  organizational_unit_names_organizational_unit_scp_arns = service_control_policies_enabled ? {
+  organizational_unit_names_organizational_unit_scp_arns = var.service_control_policies_enabled ? {
     for k, v in local.organizational_unit_names_service_control_policy_statements_map : k => module.organizational_units_service_control_policies[k].organizations_policy_arn
   } : {}
 
