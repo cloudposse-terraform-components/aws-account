@@ -171,7 +171,7 @@ module "organization_service_control_policies" {
   source  = "cloudposse/service-control-policies/aws"
   version = "0.15.1"
 
-  count = length(local.organization_service_control_policy_statements) > 0 ? 1 : 0
+  count = var.service_control_policies_enabled && length(local.organization_service_control_policy_statements) > 0 ? 1 : 0
 
   attributes                         = concat(module.this.attributes, ["organization"])
   service_control_policy_statements  = local.organization_service_control_policy_statements
@@ -186,7 +186,7 @@ module "accounts_service_control_policies" {
   source  = "cloudposse/service-control-policies/aws"
   version = "0.15.1"
 
-  for_each = local.account_names_service_control_policy_statements_map
+  for_each = var.service_control_policies_enabled ? local.account_names_service_control_policy_statements_map : {}
 
   attributes                         = concat(module.this.attributes, [each.key, "account"])
   service_control_policy_statements  = each.value
@@ -201,7 +201,7 @@ module "organizational_units_service_control_policies" {
   source  = "cloudposse/service-control-policies/aws"
   version = "0.15.1"
 
-  for_each = local.organizational_unit_names_service_control_policy_statements_map
+  for_each = var.service_control_policies_enabled ? local.organizational_unit_names_service_control_policy_statements_map : {}
 
   attributes                         = concat(module.this.attributes, [each.key, "ou"])
   service_control_policy_statements  = each.value
