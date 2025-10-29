@@ -111,6 +111,11 @@ resource "aws_organizations_organization" "this" {
   feature_set                   = "ALL"
 }
 
+resource "aws_iam_organizations_features" "this" {
+  count            = var.organization_enabled ? 1 : 0
+  enabled_features = var.organization_enabled_features
+}
+
 locals {
   organization_root_account_id = var.organization_enabled ? aws_organizations_organization.this[0].roots[0].id : data.aws_organizations_organization.existing[0].roots[0].id
 
