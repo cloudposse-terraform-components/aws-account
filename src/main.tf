@@ -114,6 +114,8 @@ resource "aws_organizations_organization" "this" {
 resource "aws_iam_organizations_features" "this" {
   count            = var.organization_enabled ? 1 : 0
   enabled_features = var.organization_enabled_features
+
+  depends_on = [aws_organizations_organization.this]
 }
 
 locals {
