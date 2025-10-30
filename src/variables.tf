@@ -39,3 +39,9 @@ variable "organization_enabled" {
   description = "A boolean flag indicating whether to create an Organization or use the existing one"
   default     = true
 }
+
+variable "organization_enabled_features" {
+  type        = list(string)
+  description = "List of Organizations features to enable in the Organization Root. Organization must have feature_set set to ALL. For additional information about valid features (e.g. RootCredentialsManagement and RootSessions), see the [AWS Organizations API Reference](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableFeature.html)"
+  default     = []
+}
