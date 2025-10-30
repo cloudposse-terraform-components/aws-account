@@ -476,6 +476,7 @@ atmos terraform apply account --stack gbl-root
 
 | Name | Type |
 |------|------|
+| [aws_iam_organizations_features.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_organizations_features) | resource |
 | [aws_organizations_account.organization_accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account) | resource |
 | [aws_organizations_account.organizational_units_accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account) | resource |
 | [aws_organizations_organization.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization) | resource |
@@ -507,6 +508,7 @@ atmos terraform apply account --stack gbl-root
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | ID element. Usually an abbreviation of your organization name, e.g. 'eg' or 'cp', to help ensure generated IDs are globally unique | `string` | `null` | no |
 | <a name="input_organization_config"></a> [organization\_config](#input\_organization\_config) | Organization, Organizational Units and Accounts configuration | `any` | n/a | yes |
 | <a name="input_organization_enabled"></a> [organization\_enabled](#input\_organization\_enabled) | A boolean flag indicating whether to create an Organization or use the existing one | `bool` | `true` | no |
+| <a name="input_organization_enabled_features"></a> [organization\_enabled\_features](#input\_organization\_enabled\_features) | List of Organizations features to enable in the Organization Root. Organization must have feature\_set set to ALL. For additional information about valid features (e.g. RootCredentialsManagement and RootSessions), see the [AWS Organizations API Reference](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableFeature.html) | `list(string)` | `[]` | no |
 | <a name="input_regex_replace_chars"></a> [regex\_replace\_chars](#input\_regex\_replace\_chars) | Terraform regular expression (regex) string.<br/>Characters matching the regex will be removed from the ID elements.<br/>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | `null` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region | `string` | n/a | yes |
 | <a name="input_service_control_policies_config_paths"></a> [service\_control\_policies\_config\_paths](#input\_service\_control\_policies\_config\_paths) | List of paths to Service Control Policy configurations | `list(string)` | n/a | yes |
