@@ -165,6 +165,33 @@ components:
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/route53-policies.yaml"
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/s3-policies.yaml"
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/ec2-policies.yaml"
+        contacts:
+          enabled: true
+          primary:
+            full_name: Cloud Posse
+            company_name: Cloud Posse, LLC
+            address_line_1: 1234 Main Street
+            city: Los Angeles
+            state_or_region: CA
+            postal_code: "90001"
+            country_code: US
+            phone_number: "+1-555-555-5555"
+          alternates:
+            billing:
+              name: Cloud Posse Billing
+              title: Billing Department
+              email_address: billing@example.net
+              phone_number: "+1-555-555-5555"
+            operations:
+              name: Cloud Posse Operations
+              title: Operations Team
+              email_address: ops@example.net
+              phone_number: "+1-555-555-5555"
+            security:
+              name: Cloud Posse Security
+              title: Security Team
+              email_address: security@example.net
+              phone_number: "+1-555-555-5555"
 ```
 
 ## First Time Organization Setup
@@ -425,6 +452,10 @@ atmos terraform apply account --stack gbl-root
 
 | Name | Type |
 |------|------|
+| [aws_account_alternate_contact.accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/account_alternate_contact) | resource |
+| [aws_account_alternate_contact.master](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/account_alternate_contact) | resource |
+| [aws_account_primary_contact.accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/account_primary_contact) | resource |
+| [aws_account_primary_contact.master](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/account_primary_contact) | resource |
 | [aws_iam_organizations_features.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_organizations_features) | resource |
 | [aws_organizations_account.organization_accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account) | resource |
 | [aws_organizations_account.organizational_units_accounts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account) | resource |
@@ -442,6 +473,7 @@ atmos terraform apply account --stack gbl-root
 | <a name="input_additional_tag_map"></a> [additional\_tag\_map](#input\_additional\_tag\_map) | Additional key-value pairs to add to each map in `tags_as_list_of_maps`. Not added to `tags` or `id`.<br/>This is for some rare cases where resources want additional configuration of tags<br/>and therefore take a list of maps with tag key, value, and additional configuration. | `map(string)` | `{}` | no |
 | <a name="input_attributes"></a> [attributes](#input\_attributes) | ID element. Additional attributes (e.g. `workers` or `cluster`) to add to `id`,<br/>in the order they appear in the list. New attributes are appended to the<br/>end of the list. The elements of the list are joined by the `delimiter`<br/>and treated as a single ID element. | `list(string)` | `[]` | no |
 | <a name="input_aws_service_access_principals"></a> [aws\_service\_access\_principals](#input\_aws\_service\_access\_principals) | List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com. Organization must have `feature_set` set to ALL. For additional information, see the [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) | `list(string)` | n/a | yes |
+| <a name="input_contacts"></a> [contacts](#input\_contacts) | AWS account contacts configuration including primary and alternate contacts. The `primary.country_code` must be a 2-letter ISO 3166-1 alpha-2 country code (e.g., "US", "GB"). The `alternates` map keys must be one of: `billing`, `operations`, or `security`. | <pre>object({<br/>    enabled = optional(bool, false)<br/><br/>    primary = optional(object({<br/>      address_line_1     = string<br/>      address_line_2     = optional(string)<br/>      address_line_3     = optional(string)<br/>      city               = string<br/>      company_name       = optional(string)<br/>      country_code       = string<br/>      district_or_county = optional(string)<br/>      full_name          = string<br/>      phone_number       = string<br/>      postal_code        = string<br/>      state_or_region    = optional(string)<br/>      website_url        = optional(string)<br/>    }))<br/><br/>    alternates = optional(map(object({<br/>      email_address = string<br/>      name          = string<br/>      phone_number  = string<br/>      title         = string<br/>    })), {})<br/>  })</pre> | `{}` | no |
 | <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br/>See description of individual variables for details.<br/>Leave string and numeric variables as `null` to use default value.<br/>Individual variable settings (non-null) override settings in context object,<br/>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | <pre>{<br/>  "additional_tag_map": {},<br/>  "attributes": [],<br/>  "delimiter": null,<br/>  "descriptor_formats": {},<br/>  "enabled": true,<br/>  "environment": null,<br/>  "id_length_limit": null,<br/>  "label_key_case": null,<br/>  "label_order": [],<br/>  "label_value_case": null,<br/>  "labels_as_tags": [<br/>    "unset"<br/>  ],<br/>  "name": null,<br/>  "namespace": null,<br/>  "regex_replace_chars": null,<br/>  "stage": null,<br/>  "tags": {},<br/>  "tenant": null<br/>}</pre> | no |
 | <a name="input_delimiter"></a> [delimiter](#input\_delimiter) | Delimiter to be used between ID elements.<br/>Defaults to `-` (hyphen). Set to `""` to use no delimiter at all. | `string` | `null` | no |
 | <a name="input_descriptor_formats"></a> [descriptor\_formats](#input\_descriptor\_formats) | Describe additional descriptors to be output in the `descriptors` output map.<br/>Map of maps. Keys are names of descriptors. Values are maps of the form<br/>`{<br/>  format = string<br/>  labels = list(string)<br/>}`<br/>(Type is `any` so the map values can later be enhanced to provide additional options.)<br/>`format` is a Terraform format string to be passed to the `format()` function.<br/>`labels` is a list of labels, in order, to pass to `format()` function.<br/>Label values will be normalized before being passed to `format()` so they will be<br/>identical to how they appear in `id`.<br/>Default is `{}` (`descriptors` output will be empty). | `any` | `{}` | no |
