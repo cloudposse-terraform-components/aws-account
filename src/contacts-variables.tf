@@ -1,5 +1,5 @@
 variable "contacts" {
-  description = "AWS account contacts configuration including primary and alternate contacts."
+  description = "AWS account contacts configuration including primary and alternate contacts. The `primary.country_code` must be a 2-letter ISO 3166-1 alpha-2 country code (e.g., 'US', 'GB'). The `alternates` map keys must be one of: billing, operations, or security."
   type = object({
     enabled = optional(bool, false)
 
