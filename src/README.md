@@ -165,6 +165,33 @@ components:
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/route53-policies.yaml"
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/s3-policies.yaml"
           - "https://raw.githubusercontent.com/cloudposse/terraform-aws-service-control-policies/0.12.0/catalog/ec2-policies.yaml"
+        contacts:
+          enabled: true
+          primary:
+            full_name: Cloud Posse
+            company_name: Cloud Posse, LLC
+            address_line_1: 1234 Main Street
+            city: Los Angeles
+            state_or_region: CA
+            postal_code: "90001"
+            country_code: US
+            phone_number: "+1-555-555-5555"
+          alternates:
+            billing:
+              name: Cloud Posse Billing
+              title: Billing Department
+              email_address: billing@cloudposse.com
+              phone_number: "+1-555-555-5555"
+            operations:
+              name: Cloud Posse Operations
+              title: Operations Team
+              email_address: ops@cloudposse.com
+              phone_number: "+1-555-555-5555"
+            security:
+              name: Cloud Posse Security
+              title: Security Team
+              email_address: security@cloudposse.com
+              phone_number: "+1-555-555-5555"
 ```
 
 ## First Time Organization Setup
