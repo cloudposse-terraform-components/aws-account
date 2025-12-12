@@ -27,4 +27,20 @@ variable "contacts" {
   })
 
   default = {}
+
+  validation {
+    condition = alltrue([
+      for key in keys(try(var.contacts.alternates, {})) :
+      contains(["billing", "operations", "security"], lower(key))
+    ])
+    error_message = "Alternate contact keys must be one of: billing, operations, security."
+  }
+
+  validation {
+    condition = (
+      try(var.contacts.primary, null) == null ||
+      can(regex("^[A-Z]{2}$", try(var.contacts.primary.country_code, "")))
+    )
+    error_message = "Primary contact country_code must be a 2-letter ISO country code (e.g., 'US', 'GB')."
+  }
 }
