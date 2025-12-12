@@ -180,17 +180,17 @@ components:
             billing:
               name: Cloud Posse Billing
               title: Billing Department
-              email_address: billing@cloudposse.com
+              email_address: billing@example.net
               phone_number: "+1-555-555-5555"
             operations:
               name: Cloud Posse Operations
               title: Operations Team
-              email_address: ops@cloudposse.com
+              email_address: ops@example.net
               phone_number: "+1-555-555-5555"
             security:
               name: Cloud Posse Security
               title: Security Team
-              email_address: security@cloudposse.com
+              email_address: security@example.net
               phone_number: "+1-555-555-5555"
 ```
 
