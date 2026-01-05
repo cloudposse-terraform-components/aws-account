@@ -14,7 +14,7 @@ description: |-
   ## Key Features
 
   - **Single-resource pattern**: Manages exactly one AWS account per component instance
-  - **Conditional import blocks** (Terraform 1.5+): Easily import existing accounts into Terraform state
+  - **Conditional import blocks** (OpenTofu/Terraform 1.7+): Easily import existing accounts into Terraform state
   - **Independent lifecycle**: Each account can be managed independently without affecting others
   - **Simple configuration**: Minimal variables required for account creation
 

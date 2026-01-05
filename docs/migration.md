@@ -132,7 +132,9 @@ After successful import, both the old `account` component and new `aws-account` 
 
 #### 4.1 Remove Resources from Old State
 
-**CRITICAL:** Use `terraform state rm` to remove resources from state without destroying them:
+> [!CAUTION]
+> **CRITICAL:** Use `terraform state rm` to remove resources from state without destroying them.
+> Running `terraform destroy` will **permanently delete** your AWS accounts!
 
 ```bash
 # List all resources in old account component state
@@ -235,7 +237,9 @@ atmos terraform plan aws-account/core-network -s <namespace>-gbl-root
 
 ### Import Block Not Working
 
-Ensure you're using OpenTofu >= 1.7.0 (required for `for_each` in `import` blocks).
+Ensure you're using OpenTofu >= 1.7.0 or Terraform >= 1.7.0 (required for `for_each` in `import` blocks).
+
+> **Note:** Basic import blocks are available in Terraform 1.5+, but `for_each` support requires 1.7+.
 
 If you excluded `imports.tf` when vendoring, the import block won't be available. Either:
 - Include `imports.tf` in your vendored component

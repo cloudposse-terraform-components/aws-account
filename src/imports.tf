@@ -1,6 +1,6 @@
 variable "import_account_id" {
   type        = string
-  description = "The AWS account ID to import. Set this to import an existing account into Terraform state."
+  description = "The AWS account ID to import. Set this to import an existing account into Terraform state. Note: Do not set this when the component is disabled (enabled = false)."
   default     = null
 }
 
