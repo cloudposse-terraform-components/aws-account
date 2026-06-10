@@ -11,6 +11,7 @@ resource "aws_organizations_account" "this" {
   parent_id                  = var.parent_id
   iam_user_access_to_billing = var.iam_user_access_to_billing
   close_on_deletion          = var.close_on_deletion
+  create_govcloud            = var.create_govcloud
   role_name                  = var.role_name
   tags                       = merge(module.this.tags, { Name = local.account_name })
 

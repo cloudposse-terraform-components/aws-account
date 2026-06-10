@@ -40,6 +40,12 @@ variable "close_on_deletion" {
   default     = false
 }
 
+variable "create_govcloud" {
+  type        = bool
+  description = "Whether to also create a GovCloud account. The GovCloud account is tied to the main (commercial) account this resource creates"
+  default     = false
+}
+
 variable "role_name" {
   type        = string
   description = "The name of the IAM role that Organizations creates in the new member account"
